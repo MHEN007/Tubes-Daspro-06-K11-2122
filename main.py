@@ -5,6 +5,7 @@ import exit
 import login
 import tambah_game
 import isempty
+import search_my_game
 
 #Program utama
 #Skema Login
@@ -14,7 +15,7 @@ login_state = False #inisialisasi state awal
 print("Silakan Login!")
 username = input("Masukkan Username: ")
 password = input("Masukkan Password: ")
-login_state = login.login(username, password)
+login_state = login.login(username, password) #minta tolong ditambahkan supaya bisa tarik user_id buat menu search_my_game
 
 while login_state == False:
     print("Username/Password salah, silakan ulangi login!")
@@ -56,5 +57,11 @@ while exit_state == False:
         if input_state==True:
             tambah_game.tambah_game(nama_game,kategori,tahun,harga,stok)
             input_state = False
+    elif menu_pilihan == "search_my_game":
+        if role == "user":
+            search_my_game() #tolong diisi parameternya adalah user_id
+        else:
+            print("Anda tidak berwenang untuk mengakses menu ini!")
+
     else:
         print("Masukkan pilihan yang benar!")
