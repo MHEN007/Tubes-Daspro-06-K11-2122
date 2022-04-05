@@ -71,5 +71,7 @@ def list_game(username):
                     print(str(nomor) +". " + info_game[i][0]+" | "+info_game[i][1]+ " | " + info_game[i][2] + " | " + info_game[i][3] + " | " + info_game[i][4])
                     nomor +=1
             validate = False
+    if nomor==1:
+        print("Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli.")
 # WII = "WII"
 # list_game(WII)
