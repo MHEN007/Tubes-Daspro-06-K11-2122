@@ -6,6 +6,8 @@ import login
 import tambah_game
 import isempty
 import search_my_game
+import topup
+import list_game
 
 #Program utama
 #Skema Login
@@ -28,7 +30,7 @@ print(f"Selamat datang {username}!")
 
 #SKEMA MENU
 #inisialisasi
-role = "admin" #nanti harus didefinisikan dari login
+role = "user" #nanti harus didefinisikan dari login
 exit_state = False #deklarasi exit state
 loop_state = True
 input_state = False
@@ -62,6 +64,9 @@ while exit_state == False:
             search_my_game() #tolong diisi parameternya adalah user_id
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
-
+    elif menu_pilihan == "topup":
+        topup.topup()
+    elif menu_pilihan == "list_game":
+        list_game.list_game(username)
     else:
         print("Masukkan pilihan yang benar!")
