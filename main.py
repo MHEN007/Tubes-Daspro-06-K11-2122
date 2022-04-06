@@ -9,6 +9,7 @@ import search_my_game
 import topup
 import list_game
 import search_game_at_store
+import riwayat
 
 #Program utama
 #Skema Login
@@ -74,5 +75,10 @@ while exit_state == False:
         list_game.list_game(username)
     elif menu_pilihan == "search_game_at_store":
         search_game_at_store.searchGameAtStore()
+    elif menu_pilihan == "riwayat":
+        if role == "user":
+            riwayat.riwayat(username)
+        else:
+            print("Anda tidak berwenang untuk mengakses menu ini!")
     else:
         print("Masukkan pilihan yang benar!")
