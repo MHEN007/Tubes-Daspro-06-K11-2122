@@ -63,7 +63,7 @@ while exit_state == False:
             input_state = False
     elif menu_pilihan == "search_my_game":
         if role == "user":
-            search_my_game() #tolong diisi parameternya adalah user_id
+            search_my_game.searchMyGame("1") #tolong diisi parameternya adalah user_id
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "topup":
