@@ -56,7 +56,7 @@ def searchMyGame(user_id):
             if user_id == ownership[i][1]:
                 for j in range(count_game):
                     if ownership[i][0] == game_list[j][0]: #cari berdasarkan data di kepemilikan.csv saja
-                        print(f"{urut}. {game_list[j][0]} | {game_list[j][1]} | {game_list[j][2]} | {game_list[j][3]}")
+                        print(f"{urut}. {game_list[j][0]} | {game_list[j][1]} | {game_list[j][4]} | {game_list[j][2]} | {game_list[j][3]}")
                         count_ada += 1
                         urut += 1
 
@@ -67,21 +67,32 @@ def searchMyGame(user_id):
             if user_id == ownership[i][1]:
                 for j in range(count_game):
                     if idGame == game_list[j][0] and ownership[i][0] == game_list[j][0]: #cari berdasarkan data di kepemilikan.csv dan input
-                        print(f"{urut}. {game_list[j][0]} | {game_list[j][1]} | {game_list[j][2]} | {game_list[j][3]}")
+                        print(f"{urut}. {game_list[j][0]} | {game_list[j][1]} | {game_list[j][4]} | {game_list[j][2]} | {game_list[j][3]}")
                         count_ada += 1
                         urut += 1
 
         if count_ada <= 0:
             print("Tidak ada game yang ditemukan")
-    else: #tahun_rilis != ""
+    elif tahun_rilis != "": #hanya tahun_rilis yang dikosongkan
         for i in range(count_own):
             if user_id == ownership[i][1]:
                 for j in range(count_game):
                     if ownership[i][0] == game_list[j][0] and tahun_rilis == game_list[j][3]:
-                        print(f"{urut}. {game_list[j][0]} | {game_list[j][1]} | {game_list[j][2]} | {game_list[j][3]}")
+                        print(f"{urut}. {game_list[j][0]} | {game_list[j][1]} | {game_list[j][4]} | {game_list[j][2]} | {game_list[j][3]}")
                         count_ada += 1
                         urut += 1
 
+        if count_ada <= 0:
+            print("Tidak ada game yang ditemukan")
+    else: #kedua parameter diisi
+        for i in range(count_own):
+            if user_id == ownership[i][1]:
+                for j in range(count_game):
+                    if idGame == game_list[j][0] and tahun_rilis == game_list[j][3]:
+                        print(f"{urut}. {game_list[j][0]} | {game_list[j][1]} | {game_list[j][4]} | {game_list[j][2]} | {game_list[j][3]}")
+                        count_ada += 1
+                        urut += 1
+            
         if count_ada <= 0:
             print("Tidak ada game yang ditemukan")
 
