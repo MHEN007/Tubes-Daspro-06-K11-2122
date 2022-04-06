@@ -1,39 +1,39 @@
 def list_game(username):
     #Akses database kepemilikan.csv
-    game = []
+    ownership = []
     temp = ""
     cc= []
     count_own = -1
-    with open("./database/kepemilikan.csv","r") as game_owner:
-        for row in game_owner:
+    with open("./database/kepemilikan.csv","r") as own:
+        for row in own:
             for char in row:
                 if char != ";" and char!="\n":
                     temp += char
                 else:
                     cc += [temp]
                     temp = ""
-            game += [cc]
+            ownership += [cc]
             cc = []
             count_own +=1
-    game_owner.close()
+    own.close()
 
     #Akses database game.csv
-    info_game = []
+    game_list = []
     temp = ""
     cc = []
     count_game = -1
-    with open("./database/game.csv","r") as info:
-        for row in info:
+    with open("./database/game.csv","r") as game:
+        for row in game:
             for char in row:
                 if char != ";" and char != "\n":
                     temp += char
                 else:
                     cc += [temp]
                     temp = ""
-            info_game += [cc]
+            game_list += [cc]
             cc = []
             count_game += 1
-    info.close()
+    game.close()
 
     #akses database user.csv
     user = []
@@ -62,13 +62,13 @@ def list_game(username):
     validate = False
     print("Daftar game: ")
     for i in range(1,count_own+1):
-        if game[i][1] == id:
-            temp_game = game[i][0]
+        if ownership[i][1] == id:
+            temp_game = ownership[i][0]
             validate = True
         if validate :
             for i in range(1,count_game+1):
-                if info_game[i][0]==temp_game:
-                    print(str(nomor) +". " + info_game[i][0]+" | "+info_game[i][1]+ " | " + info_game[i][2] + " | " + info_game[i][3] + " | " + info_game[i][4])
+                if game_list[i][0]==temp_game:
+                    print(str(nomor) +". " + game_list[i][0]+" | "+game_list[i][1]+ " | " + game_list[i][2] + " | " + game_list[i][3] + " | " + game_list[i][4])
                     nomor +=1
             validate = False
     if nomor==1:
