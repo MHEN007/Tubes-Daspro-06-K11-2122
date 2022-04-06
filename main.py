@@ -8,6 +8,7 @@ import isempty
 import search_my_game
 import topup
 import list_game
+import search_game_at_store
 
 #Program utama
 #Skema Login
@@ -65,8 +66,13 @@ while exit_state == False:
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "topup":
-        topup.topup()
+        if role == "admin":
+            topup.topup()
+        else: #role != admin
+            print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "list_game":
         list_game.list_game(username)
+    elif menu_pilihan == "search_game_at_store":
+        search_game_at_store.searchGameAtStore()
     else:
         print("Masukkan pilihan yang benar!")
