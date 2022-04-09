@@ -1,10 +1,44 @@
-def register(username, nama, password, role, saldo):
-    db_user = open('./database/user.csv', 'a')
-    # get max id
-    id = 3 # ini harus cari cara biar bisa dapetin last row!
-    insert = db_user.write(f"{id};{username};{nama};{password};{role};{saldo}")
+def login ():
     
-    if insert:
-        print(f"Username {username} berhasil didaftarkan!")
-
-register("duca_AS", "Ronald", "12345", "user", "50000") # contoh input
+    a = 0
+    user = []
+    temp = ""
+    cc = []
+    
+    with open('C:/Users/Asus/Documents/Tubes GILA/user.csv', 'r') as user_file:
+        for row in user_file:
+            for char in row:
+                if char != ";" and char != "\n":
+                    temp += char
+                else: #char == ";"
+                    cc += [temp]
+                    temp = ""                
+            a += 1      
+            user += [cc]
+            cc = []
+        
+        rolling = True
+        while rolling:
+            username = input("Masukkan username: ")
+            password = input("Masukkan password: ")
+            print()
+            
+            hasLogin = False
+            
+            for i in range(a):
+                if (username == user[i][1]) and (password == user[i][3]):
+                    hasLogin = True
+                    print("Halo " + (user[i][2]) + "! Selamat datang di Binomo")
+                
+                    if user[i][4] == "admin":
+                        isAdmin = True
+                        
+                    break
+                
+            if (hasLogin == False):
+                print("Password atau username salah atau tidak ditemukan")
+                print()
+            
+            else:
+                rolling = False
+        # rolling == False
