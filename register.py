@@ -33,6 +33,9 @@ def login ():
                     if user[i][4] == "admin":
                         isAdmin = True
                         
+                    elif user[i][4] == "user":
+                        isUser = True
+                        
                     break
                 
             if (hasLogin == False):
@@ -41,4 +44,3 @@ def login ():
             
             else:
                 rolling = False
-        # rolling == False
