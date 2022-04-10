@@ -36,6 +36,7 @@ user_file.close()
 game_list = []
 temp = ""
 cc = []
+count_game = 0
 with open("./database/game.csv","r") as game:
     for row in game:
         for char in row:
@@ -46,6 +47,7 @@ with open("./database/game.csv","r") as game:
                 temp = ""
         game_list += [cc]
         cc = []
+        count_game +=1
 game.close()
 
 #PARSE UNTUK kepemilikan.csv
@@ -115,7 +117,7 @@ while exit_state == False:
                 print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")
         loop_state = True
         if input_state==True:
-            tambah_game.tambah_game(nama_game,kategori,tahun,harga,stok,game_list)
+            tambah_game.tambah_game(nama_game,kategori,tahun,harga,stok,game_list,count_game)
             input_state = False
     elif menu_pilihan == "search_my_game":
         if role == "user":
