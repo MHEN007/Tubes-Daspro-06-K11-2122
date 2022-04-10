@@ -5,7 +5,7 @@ def login ():
     temp = ""
     cc = []
     
-    with open('C:/Users/Asus/Documents/Tubes GILA/user.csv', 'r') as user_file:
+    with open('./database/user.csv', 'r') as user_file:
         for row in user_file:
             for char in row:
                 if char != ";" and char != "\n":
@@ -31,10 +31,10 @@ def login ():
                     print("Halo " + (user[i][2]) + "! Selamat datang di Binomo")
                 
                     if user[i][4] == "admin":
-                        isAdmin = True
+                        return("admin", username, user[i][0])
                         
                     elif user[i][4] == "user":
-                        isUser = True
+                        return("user", username, user[i][0])
                         
                     break
                 

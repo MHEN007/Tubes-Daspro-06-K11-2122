@@ -15,28 +15,14 @@ import riwayat
 #Skema Login
 print("Selamat Datang di Toko BNMO")
 
-login_state = False #inisialisasi state awal
-print("Silakan Login!")
-username = input("Masukkan Username: ")
-password = input("Masukkan Password: ")
-login_state = login.login(username, password) #minta tolong ditambahkan supaya bisa tarik user_id buat menu search_my_game
-
-while login_state == False:
-    print("Username/Password salah, silakan ulangi login!")
-    username = input("Masukkan Username: ")
-    password = input("Masukkan Password: ")
-    login_state = login.login(username, password)
-
-#Pesan sukses login
-print(f"Selamat datang {username}!")
-
-#SKEMA MENU
+#SKEMA LOGIN
 #inisialisasi
-role = "user" #nanti harus didefinisikan dari login
+role, username, user_id = login.login() #nanti harus didefinisikan dari login
 exit_state = False #deklarasi exit state
 loop_state = True
 input_state = False
 
+#SKEMA MENU
 #Pemilihan menu
 while exit_state == False:
     menu_pilihan = input(">>> ")
@@ -63,7 +49,7 @@ while exit_state == False:
             input_state = False
     elif menu_pilihan == "search_my_game":
         if role == "user":
-            search_my_game.searchMyGame("1") #tolong diisi parameternya adalah user_id
+            search_my_game.searchMyGame(user_id) #tolong diisi parameternya adalah user_id
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "topup":
