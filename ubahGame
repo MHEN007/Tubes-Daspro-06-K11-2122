@@ -9,7 +9,7 @@ def ubah_Game(ubahGame):
                 cek = False
                 list = count
                 break
-            count+=1 
+            count += 1 
         if cek == True:
             print("ID tidak valid.")
     namaGame = str(input("Masukkan nama game: "))
