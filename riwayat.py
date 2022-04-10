@@ -25,5 +25,8 @@ def riwayat(username, history):
     for i in range(1,count_hist+1):
         if history[i][3]==username:
             print(str(nomor) + ". " +history[i][0]+ " | "+history[i][1]+" | " + history[i][2] + " | " + history[i][4])
+            nomor +=1
+    if nomor==1: #jika tidak ada riwayat
+        print("Maaf, kamu tidak ada riwayat pembelian game. Ketik perintah beli_game untuk membeli.")
 #WII = "WII"
 #riwayat(WII, [['game_id', 'nama', 'harga', 'username', 'tahun'],['GAME001', 'Tomb Raider', '500000', 'WII', '2022']])
