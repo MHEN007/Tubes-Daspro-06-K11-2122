@@ -16,7 +16,7 @@ def ubah_Game(ubahGame):
     kategori = str(input("Masukkan kategori: "))
     tahun_Rilis = str(input("Masukkan tahun rilis: "))
     hargaGame = str(input("Masukkan harga: "))
-    ulang=1
+    ulang = 1
     for i in [namaGame,kategori,tahun_Rilis,hargaGame]:
         if i != '':
             ubahGame[list][ulang] = i
