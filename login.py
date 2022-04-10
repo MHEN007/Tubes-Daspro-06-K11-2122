@@ -1,17 +1,46 @@
-def login(username, password):
-    db_user = open('./database/user.csv', 'r') #buka user.csv untuk diread saja
-    found_state = 0 #inisialisasi state (found_state)
-    for row in db_user: #melakukan traversal row untuk setiap row dalam db_user
-        if username in row: #mencari username dalam row yang ingin dicari
-            if password in row: #jika username benar, lanjutkan dengan mencari password dalam row yang sama
-                found_state += 1 #jika password ditemukan dalam row yang sama found_state ditambah 1
-                break #exit dari traversal
-    if found_state == 1: #Jika hasilnya 1 maka boleh login (True) jika tidak, tidak boleh login (False)
-        return True
-    else:
-        return False
-
-#TES
-#print(login("duca_AS","12345")) #return true
-
-#Cek username dengan if x in y masih kurang baik karena tidak mencari berdasarkan ketepatan (word to word)
+def login ():
+    
+    a = 0
+    user = []
+    temp = ""
+    cc = []
+    
+    with open('C:/Users/Asus/Documents/Tubes GILA/user.csv', 'r') as user_file:
+        for row in user_file:
+            for char in row:
+                if char != ";" and char != "\n":
+                    temp += char
+                else: #char == ";"
+                    cc += [temp]
+                    temp = ""                
+            a += 1      
+            user += [cc]
+            cc = []
+        
+        rolling = True
+        while rolling:
+            username = input("Masukkan username: ")
+            password = input("Masukkan password: ")
+            print()
+            
+            hasLogin = False
+            
+            for i in range(a):
+                if (username == user[i][1]) and (password == user[i][3]):
+                    hasLogin = True
+                    print("Halo " + (user[i][2]) + "! Selamat datang di Binomo")
+                
+                    if user[i][4] == "admin":
+                        isAdmin = True
+                        
+                    elif user[i][4] == "user":
+                        isUser = True
+                        
+                    break
+                
+            if (hasLogin == False):
+                print("Password atau username salah atau tidak ditemukan")
+                print()
+            
+            else:
+                rolling = False
