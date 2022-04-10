@@ -35,11 +35,13 @@ def ubah_stok (game_list) :
             if count > 0 :
                 game_list[i][5] = int(game_list[i][5]) + count
                 print("Stok game " + str(game_list[i][1]) + " berhasil ditambahkan. Stok sekarang: " + str(game_list[i][5]))
+                return (game_list)
             
             else :
                 if count + int(game_list[i][5]) >= 0:
                     game_list[i][5] = int(game_list[i][5]) + count
                     print("Stok game " + str(game_list[i][1]) + " berhasil dikurangkan. Stok sekarang: " + str(game_list[i][5]))
+                    return (game_list)
                 else :
                     print("Stok game " + str(game_list[i][1]) + " gagal dikurangi karena stok kurang. Stok sekarang: " + str(game_list[i][5]) + " ( <" + str(count*(-1)) + " )")
             
