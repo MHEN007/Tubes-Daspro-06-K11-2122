@@ -21,7 +21,6 @@ def ubah_stok (game_list) :
     for row in game_list:
         a += 1
         
-    print(">>> ubah_stok")
     id = input("Masukkan ID game: ")
     
     stockIsValid = False
