@@ -12,6 +12,7 @@ import list_game
 import search_game_at_store
 import riwayat
 import save
+import ubahstok
 
 #SKEMA LOAD
 #Copa tolong ganti ini dg module load ya... ini buat penyesuaian aja
