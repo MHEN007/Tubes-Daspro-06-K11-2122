@@ -1,7 +1,7 @@
-def searchMyGame(user_id):
+def searchMyGame(user_id,ownership,game_list):
     idGame = input("Masukkan ID Game ")
     tahun_rilis = input("Masukkan tahun rilis game ")
-
+    '''
     #buka database kepemilikan
     ownership = []
     temp = ""
@@ -35,7 +35,7 @@ def searchMyGame(user_id):
             game_list += [cc]
             cc = []
     game.close()
-
+    '''
 
     print ("Daftar game pada inventory yang memenuhi kriteria:")
 

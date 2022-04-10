@@ -11,13 +11,83 @@ import list_game
 import search_game_at_store
 import riwayat
 
+#SKEMA LOAD
+#Copa tolong ganti ini dg module load ya... ini buat penyesuaian aja
+#PARSE UNTUK user.csv
+user = []
+temp = ""
+cc = []
+with open('./database/user.csv', 'r') as user_file:
+    for row in user_file:
+        for char in row:
+            if char != ";" and char != "\n":
+                    temp += char
+            else: #char == ";"
+                cc += [temp]
+                temp = ""
+        
+        user += [cc]
+        cc = []
+        
+user_file.close()
+
+
+#PARSE UNTUK game.csv
+game_list = []
+temp = ""
+cc = []
+with open("./database/game.csv","r") as game:
+    for row in game:
+        for char in row:
+            if char != ";" and char != "\n":
+                temp += char
+            else:
+                cc += [temp]
+                temp = ""
+        game_list += [cc]
+        cc = []
+game.close()
+
+#PARSE UNTUK kepemilikan.csv
+ownership = []
+temp = ""
+cc= []
+with open("./database/kepemilikan.csv","r") as own:
+    for row in own:
+        for char in row:
+            if char != ";" and char!="\n":
+                temp += char
+            else:
+                cc += [temp]
+                temp = ""
+        ownership += [cc]
+        cc = []
+own.close()
+
+#PARSE UNTUK riwayat.csv
+history = []
+temp = ""
+cc = []
+with open ("./database/riwayat.csv", "r") as history_file:
+    for row in history_file:
+        for char in row:
+            if char != ";" and char!="\n":
+                temp += char
+            else:
+                cc += [temp]
+                temp = ""
+        history += [cc]
+        cc = []
+history_file.close()
+#SKEMA LOAD SELESAI
+
 #Program utama
 #Skema Login
 print("Selamat Datang di Toko BNMO")
 
 #SKEMA LOGIN
 #inisialisasi
-role, username, user_id = login.login() #nanti harus didefinisikan dari login
+role, username, user_id = login.login(user) #nanti harus didefinisikan dari login
 exit_state = False #deklarasi exit state
 loop_state = True
 input_state = False
@@ -49,21 +119,21 @@ while exit_state == False:
             input_state = False
     elif menu_pilihan == "search_my_game":
         if role == "user":
-            search_my_game.searchMyGame(user_id) #tolong diisi parameternya adalah user_id
+            search_my_game.searchMyGame(user_id, ownership, game_list) #tolong diisi parameternya adalah user_id
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "topup":
         if role == "admin":
-            topup.topup()
+            topup.topup(user)
         else: #role != admin
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "list_game":
-        list_game.list_game(username)
+        list_game.list_game(username, ownership, game_list, user)
     elif menu_pilihan == "search_game_at_store":
-        search_game_at_store.searchGameAtStore()
+        search_game_at_store.searchGameAtStore(game_list)
     elif menu_pilihan == "riwayat":
         if role == "user":
-            riwayat.riwayat(username)
+            riwayat.riwayat(username, history)
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     else:

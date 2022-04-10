@@ -1,4 +1,5 @@
-def topup():
+def topup(user):
+    '''
     user = []
     temp = ""
     cc = []
@@ -16,6 +17,12 @@ def topup():
             cc = []
             count +=1
     count -=1
+    '''
+    count = 0
+    for row in user:
+        count += 1
+    count -= 1
+
     us = input("Masukkan username: ")
     saldo = int(input("Masukkan saldo: "))
     if saldo>0:
@@ -33,3 +40,4 @@ def topup():
     else:
         print("Masukan tidak valid")
     print(user)
+    return(user)

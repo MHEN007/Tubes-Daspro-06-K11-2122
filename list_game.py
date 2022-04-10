@@ -1,4 +1,5 @@
-def list_game(username):
+def list_game(username, ownership, game_list, user):
+    '''
     #Akses database kepemilikan.csv
     ownership = []
     temp = ""
@@ -52,7 +53,19 @@ def list_game(username):
             user += [cc]
             cc = []
     user_file.close()
-
+    '''
+    count_own = -1
+    for row in ownership:
+        count_own += 1
+    
+    count_game = -1
+    for row in game_list:
+        count_game += 1
+    
+    count_user = -1
+    for row in user:
+        count_user += 1
+        
     #cari id
     for i in range(1,count_user+1):
         if user[i][1] == username:

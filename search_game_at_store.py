@@ -1,10 +1,11 @@
-def searchGameAtStore():
+def searchGameAtStore(game_list):
     idGame = input("Masukkan ID Game ")
     namaGame = input("Masukkan Nama game ")
     hargaGame = input("Masukkan Harga Game ")
     kategori = input("Masukkan Kategori Game ")
     tahun = input("Masukkan Tahun Rilis Game ")
     print("")
+    '''
     #buka database game.csv
     game_list = []
     temp = ""
@@ -21,6 +22,7 @@ def searchGameAtStore():
             game_list += [cc]
             cc = []
     game.close()
+    '''
 
     #count row dalam game.csv
     count_row = 0
