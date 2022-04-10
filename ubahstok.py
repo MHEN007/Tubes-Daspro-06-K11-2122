@@ -49,5 +49,3 @@ def ubah_stok (game_list) :
     if (stockIsValid == False) :
         print("Tidak ada game dengan ID tersebut!")
         
-
-ubah_stok (game_list)
