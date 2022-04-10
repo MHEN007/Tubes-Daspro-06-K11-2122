@@ -1,5 +1,6 @@
 #bagian utama program
 #lakukan import terhadap module yang sudah ada
+import os
 import help
 import exit
 import login
@@ -10,6 +11,7 @@ import topup
 import list_game
 import search_game_at_store
 import riwayat
+import save
 
 #SKEMA LOAD
 #Copa tolong ganti ini dg module load ya... ini buat penyesuaian aja
@@ -136,5 +138,7 @@ while exit_state == False:
             riwayat.riwayat(username, history)
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
+    elif menu_pilihan == "save":
+        save.save(user, game_list, ownership, history)
     else:
         print("Masukkan pilihan yang benar!")
