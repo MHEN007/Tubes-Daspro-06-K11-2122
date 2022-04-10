@@ -5,6 +5,10 @@ def save(user, game_list, ownership, history):
     parent_dir = './save/' #folder penyimpanan untuk prosedur save
     folder = input("Masukkan nama folder penyimpanan: ")
     
+    while folder == "": #asumsinya tidak boleh kosong untuk nama foldernya
+        print("Input nama folder tidak boleh kosong!")
+        folder = input("Masukkan nama folder penyimpanan: ")
+    
     for (root, files, dirs) in os.walk(f'{parent_dir}'):
         if folder in root: #jika nama folder ada dalam parameter root
             state = True
