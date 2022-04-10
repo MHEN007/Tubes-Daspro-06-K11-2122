@@ -130,6 +130,11 @@ while exit_state == False:
             topup.topup(user)
         else: #role != admin
             print("Anda tidak berwenang untuk mengakses menu ini!")
+    elif menu_pilihan == "ubah_stok":
+        if role == "admin":
+            ubahstok.ubah_stok(game_list)
+        else: #role != admin
+            print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "list_game":
         list_game.list_game(username, ownership, game_list, user)
     elif menu_pilihan == "search_game_at_store":
