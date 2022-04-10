@@ -115,7 +115,7 @@ while exit_state == False:
                 print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")
         loop_state = True
         if input_state==True:
-            tambah_game.tambah_game(nama_game,kategori,tahun,harga,stok)
+            tambah_game.tambah_game(nama_game,kategori,tahun,harga,stok,game_list)
             input_state = False
     elif menu_pilihan == "search_my_game":
         if role == "user":
