@@ -1,10 +1,11 @@
-def register(username, nama, password, role, saldo):
-    db_user = open('./database/user.csv', 'a')
-    # get max id
-    id = 3 # ini harus cari cara biar bisa dapetin last row!
-    insert = db_user.write(f"{id};{username};{nama};{password};{role};{saldo}")
-
-    if insert:
-        print(f"Username {username} berhasil didaftarkan!")
-
-register("duca_AS", "Ronald", "12345", "user", "50000") # contoh input
+# Register
+nama=input("Masukan nama: ")
+username=input("Masukan username: ")
+password=input("Masukan password: ")    
+for row in user:
+    a += 1
+    for i in range(a):
+        if (username != user[i][2]) and username != nama:
+            print(f"Username {username} telah berhasil register ke dalam “Binomo”.")
+    else:
+        print(f"Username {username} sudah terpakai, silakan menggunakan username lain.")
