@@ -25,18 +25,18 @@ def topup(user):
 
     us = input("Masukkan username: ")
     saldo = int(input("Masukkan saldo: "))
-    if saldo>0:
-        for i in range(1,count+1):
-            if user[i][1] == us:
+    for i in range(1,count+1):
+        if user[i][1] == us:
+            if saldo>0 or saldo+user[i][5]>0:
                 saldo_akhir = int(user[i][5])
                 saldo_akhir += saldo
                 user[i][5] = str(saldo_akhir)
                 found = True
                 break
-        if found==False:
-            print('Username "'+us+ '" tidak ditemukan.')
-        else:
-            print("Top up berhasil. Saldo "+us+ " bertambah menjadi "+str(saldo_akhir))
+            else:
+                print("Masukan tidak valid")
+    if found==False:
+        print('Username "'+us+ '" tidak ditemukan.')
     else:
-        print("Masukan tidak valid")
+        print("Top up berhasil. Saldo "+us+ " bertambah menjadi "+str(saldo_akhir))
     return(user)
