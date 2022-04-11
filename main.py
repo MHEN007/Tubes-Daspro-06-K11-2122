@@ -13,6 +13,8 @@ import search_game_at_store
 import riwayat
 import save
 import ubahstok
+import ubahGame
+import register
 
 #SKEMA LOAD
 #Copa tolong ganti ini dg module load ya... ini buat penyesuaian aja
@@ -146,5 +148,12 @@ while exit_state == False:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "save":
         save.save(user, game_list, ownership, history)
+    elif menu_pilihan == "ubah_game":
+        ubahGame.ubah_Game(game_list)
+    elif menu_pilihan == "register":
+        if role == "admin":
+            register.register(user)
+        else:
+            print("Anda tidak berwenang untuk mengakses menu ini!")
     else:
         print("Masukkan pilihan yang benar!")
