@@ -20,6 +20,7 @@ def help(role): #parameter berupa role dari user yang sedang login
         print("6. riwayat - untuk melihat riwayat pembelian game")
         print("7. help - untuk melihat perintah yang ada")
         print("8. exit - untuk exit dari program")
+        print("9. save - untuk menyimpan data sebagai csv file")
 
 #tes
 #help("admin")
