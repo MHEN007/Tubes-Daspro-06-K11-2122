@@ -1,41 +1,6 @@
 def searchMyGame(user_id,ownership,game_list):
     idGame = input("Masukkan ID Game ")
     tahun_rilis = input("Masukkan tahun rilis game ")
-    '''
-    #buka database kepemilikan
-    ownership = []
-    temp = ""
-    cc = []
-    with open('./database/kepemilikan.csv','r') as own:
-        for row in own:
-            for char in row:
-                if char != ";" and char != "\n":
-                        temp += char
-                else: #char == ";"
-                    cc += [temp]
-                    temp = ""
-            
-            ownership += [cc]
-            cc = []
-    own.close()
-
-    #buka database game
-    game_list = []
-    temp = ""
-    cc = []
-    with open('./database/game.csv','r') as game:
-        for row in game:
-            for char in row:
-                if char != ";" and char != "\n":
-                        temp += char
-                else: #char == ";"
-                    cc += [temp]
-                    temp = ""
-            
-            game_list += [cc]
-            cc = []
-    game.close()
-    '''
 
     print ("Daftar game pada inventory yang memenuhi kriteria:")
 

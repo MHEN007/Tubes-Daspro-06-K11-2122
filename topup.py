@@ -18,6 +18,7 @@ def topup(user):
             count +=1
     count -=1
     '''
+    found = False
     count = 0
     for row in user:
         count += 1
@@ -27,11 +28,11 @@ def topup(user):
     saldo = int(input("Masukkan saldo: "))
     for i in range(1,count+1):
         if user[i][1] == us:
-            if saldo>0 or saldo+user[i][5]>0:
+            found = True
+            if saldo>0 or saldo+int(user[i][5])>0:
                 saldo_akhir = int(user[i][5])
                 saldo_akhir += saldo
                 user[i][5] = str(saldo_akhir)
-                found = True
                 break
             else:
                 print("Masukan tidak valid")
