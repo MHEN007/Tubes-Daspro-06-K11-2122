@@ -15,6 +15,7 @@ import save
 import ubahstok
 import ubahGame
 import register
+import listing
 
 #SKEMA LOAD
 #Copa tolong ganti ini dg module load ya... ini buat penyesuaian aja
@@ -127,6 +128,8 @@ while exit_state == False:
             search_my_game.searchMyGame(user_id, ownership, game_list) #tolong diisi parameternya adalah user_id
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
+    elif menu_pilihan == "listing_game":
+        listing.listing(game_list)
     elif menu_pilihan == "topup":
         if role == "admin":
             topup.topup(user)
