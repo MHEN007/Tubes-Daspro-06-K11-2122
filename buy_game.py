@@ -1,7 +1,7 @@
 user = []
 temp = ""
 cc = []
-with open('C:/Users/Asus/Documents/Tubes GILA/user.csv', 'r') as user_file:
+with open('./database/user.csv', 'r') as user_file:
     for row in user_file:
         for char in row:
             if char != ";" and char != "\n":
@@ -16,7 +16,7 @@ user_file.close()
 ownership = []
 temp = ""
 cc= []
-with open('C:/Users/Asus/Documents/Tubes GILA/kepemilikan.csv', 'r') as own:
+with open('./database/kepemilikan.csv', 'r') as own:
     for row in own:
         for char in row:
             if char != ";" and char!="\n":
@@ -31,7 +31,7 @@ own.close()
 game_list = []
 temp = ""
 cc = []
-with open('C:/Users/Asus/Documents/Tubes GILA/game.csv', 'r') as game:
+with open('./database/game.csv', 'r') as game:
     for row in game:
         for char in row:
             if char != ";" and char != "\n":
@@ -58,16 +58,16 @@ def buy_game(username, user, ownership, game_list) :
         c += 1
         
     #cari id
-    i = 0
+    i = 0 #ini buat apa? kan kalo for i in range(c) mulainy jg dr 0 kan?
     for i in range(c):
         if user[i][1] == username:
-            id = i
+            id = user[i][0] #kalo id = i; id itu int. Kalo id = user[i][0]; id itu str. bandingkan str dg str
             saldo = user[i][5]
     print(id)
     
     id_game = input("Masukkan ID Game: ")
     
-    i = 0
+    i = 0#ini buat apa? kan kalo for i in range(c) mulainy jg dr 0 kan?
     # cari id game di game.csv
     for i in range (b) :
         if id_game == game_list[i][0] :
@@ -75,7 +75,7 @@ def buy_game(username, user, ownership, game_list) :
             stok_game = game_list[i][5]
             nama_game = game_list[i][1]
     
-    i = 0
+    i = 0#ini buat apa? kan kalo for i in range(c) mulainy jg dr 0 kan?
     found = False        
     for i in range (a) :
         print(ownership[i][0])
