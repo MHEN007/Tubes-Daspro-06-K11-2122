@@ -6,3 +6,8 @@ def isempty(a):
         return False
     else:
         return True
+def lenght(a):
+    count = 0
+    for s in a:
+        count +=1
+    return count
