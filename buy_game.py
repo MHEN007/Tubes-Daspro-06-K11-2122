@@ -1,85 +1,35 @@
-user = []
-temp = ""
-cc = []
-with open('./database/user.csv', 'r') as user_file:
-    for row in user_file:
-        for char in row:
-            if char != ";" and char != "\n":
-                temp += char
-            else:
-                cc += [temp]
-                temp = ""
-        user += [cc]
-        cc = []
-user_file.close()
-    
-ownership = []
-temp = ""
-cc= []
-with open('./database/kepemilikan.csv', 'r') as own:
-    for row in own:
-        for char in row:
-            if char != ";" and char!="\n":
-                temp += char
-            else:
-                cc += [temp]
-                temp = ""
-        ownership += [cc]
-        cc = []
-own.close()
-    
-game_list = []
-temp = ""
-cc = []
-with open('./database/game.csv', 'r') as game:
-    for row in game:
-        for char in row:
-            if char != ";" and char != "\n":
-                temp += char
-            else:
-                cc += [temp]
-                temp = ""
-        game_list += [cc]
-        cc = []
-game.close()    
-
 def buy_game(username, user, ownership, game_list) :
     
-    a = 0
+    row_ownership = 0
     for row in ownership:
-        a += 1
+        row_ownership += 1
     
-    b = 0  
+    row_game = 0  
     for row in game_list:
-        b += 1
+        row_game += 1
     
-    c = 0   
+    row_user = 0   
     for row in user:
-        c += 1
+        row_user += 1
         
     #cari id
-    i = 0 #ini buat apa? kan kalo for i in range(c) mulainy jg dr 0 kan?
-    for i in range(c):
+    for i in range(row_user):
         if user[i][1] == username:
-            id = user[i][0] #kalo id = i; id itu int. Kalo id = user[i][0]; id itu str. bandingkan str dg str
+            id = user[i][0]
             saldo = user[i][5]
-    print(id)
-    
+
     id_game = input("Masukkan ID Game: ")
     
-    i = 0#ini buat apa? kan kalo for i in range(c) mulainy jg dr 0 kan?
+
     # cari id game di game.csv
-    for i in range (b) :
+    for i in range (row_game) :
         if id_game == game_list[i][0] :
             harga_game = game_list[i][4]
             stok_game = game_list[i][5]
             nama_game = game_list[i][1]
-    
-    i = 0#ini buat apa? kan kalo for i in range(c) mulainy jg dr 0 kan?
+
     found = False        
-    for i in range (a) :
-        print(ownership[i][0])
-        print(ownership[i][1])
+    for i in range (row_ownership) :
         if ((id_game == ownership[i][0]) and (id == ownership[i][1])):
             found = True
             print("")
@@ -99,6 +49,4 @@ def buy_game(username, user, ownership, game_list) :
             print("")
             print("Saldo anda tidak cukup untuk membeli game tersebut!")
 
-username = "WII"
-
-buy_game(username, user, ownership, game_list)
+#buy_game(username, user, ownership, game_list)
