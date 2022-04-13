@@ -128,7 +128,7 @@ while exit_state == False:
             search_my_game.searchMyGame(user_id, ownership, game_list) #tolong diisi parameternya adalah user_id
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
-    elif menu_pilihan == "listing_game":
+    elif menu_pilihan == "list_game_toko":
         listing.listing(game_list)
     elif menu_pilihan == "topup":
         if role == "admin":
