@@ -11,7 +11,7 @@ def cekfolder(x):
 def load():
     print("loading...")
     parser = argparse.ArgumentParser(usage = "python program_binomo.py <nama_folder>") 
-    parser.add_argument("x") #nama untuk argumen
+    parser.add_argument("x") # nama untuk argumen
 
     if isempty.lenght(sys.argv) == 1: # cek nama folder
         print("Tidak ada nama folder yang diberikan!")
