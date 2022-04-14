@@ -3,7 +3,7 @@ import sys
 import argparse
 import isempty
 
-#fungsi untuk cek folder
+# fungsi untuk cek folder
 def cekfolder(x):
     exist = os.path.exists(x)
     return exist
@@ -13,7 +13,7 @@ def load():
     parser = argparse.ArgumentParser(usage = "python program_binomo.py <nama_folder>") 
     parser.add_argument("x") #nama untuk argumen
 
-    if isempty.lenght(sys.argv) == 1: #cek nama folder
+    if isempty.lenght(sys.argv) == 1: # cek nama folder
         print("Tidak ada nama folder yang diberikan!")
         sys.exit(1)
     args=parser.parse_args() 
