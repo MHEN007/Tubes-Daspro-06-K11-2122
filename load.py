@@ -18,11 +18,11 @@ def load():
     args=parser.parse_args() 
     
     if cekfolder(args.x): # validasi folder
-        db_user = open(f"{args.x}/user.csv")  
-        db_game = open(f"{args.x}/game.csv")
-        db_history = open(f"{args.x}/riwayat.csv")
-        db_ownership = open(f"{args.x}/kepemilikan.csv")
+        user = open(f"{args.x}/user.csv")  
+        game = open(f"{args.x}/game.csv")
+        history = open(f"{args.x}/riwayat.csv")
+        ownership = open(f"{args.x}/kepemilikan.csv")
         print("Selamat datang di antarmuka “Binomo”") 
     else:
         print(f"Folder “{args.x}” tidak ditemukan.")
-    return (db_user.readlines()),db_game.readlines()(db_ownership.readlines())(db_history.readlines())
+    return (user.readlines()), (game.readlines()), (ownership.readlines()), (history.readlines())
