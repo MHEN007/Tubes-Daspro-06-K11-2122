@@ -12,6 +12,7 @@ def tambah_game(nama,kategori,tahun,harga,stok,game_list):
     else :
         id = "GAME00" + str(count_game)
     game_list += [[id,nama, kategori, tahun, harga, stok]] 
+    print(f"Selamat! Berhasil menambahkan game BNMO - {nama}.")
     return (game_list)
 
 def ulang(a,b,c,d,e):

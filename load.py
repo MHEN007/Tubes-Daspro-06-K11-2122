@@ -93,7 +93,7 @@ def load():
                 cc = []
         history_file.close()
         print("Selamat datang di antarmuka “Binomo”")
-        return(user,game,history,ownership) 
+        return(user,game_list,history,ownership) 
     else:
         print(f"Folder “{args.x}” tidak ditemukan.")
     
