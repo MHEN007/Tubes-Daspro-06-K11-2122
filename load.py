@@ -98,4 +98,4 @@ def load():
         print(f"Folder “{args.x}” tidak ditemukan.")
     
 
-load()
+#load()
