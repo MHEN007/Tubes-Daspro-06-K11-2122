@@ -92,9 +92,10 @@ def load():
                 history += [cc]
                 cc = []
         history_file.close()
-        print("Selamat datang di antarmuka “Binomo”") 
+        print("Selamat datang di antarmuka “Binomo”")
+        return(user,game,history,ownership) 
     else:
         print(f"Folder “{args.x}” tidak ditemukan.")
-    return(user,game,history,ownership)
+    
 
-#load()
+load()
