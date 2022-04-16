@@ -20,12 +20,81 @@ def load():
     args = parser.parse_args() 
     
     if cekfolder(args.x): # validasi folder
-        user = open(f"{args.x}/user.csv")  
-        game = open(f"{args.x}/game.csv")
-        history = open(f"{args.x}/riwayat.csv")
-        ownership = open(f"{args.x}/ownership.csv")
+        '''
+        user_src = open(f"{args.x}/user.csv")  
+        game_src = open(f"{args.x}/game.csv")
+        history_src = open(f"{args.x}/riwayat.csv")
+        ownership_src = open(f"{args.x}/kepemilikan.csv")
+        '''
+        #PARSE UNTUK user.csv
+        user = []
+        temp = ""
+        cc = []
+        with open(f'{args.x}/user.csv', 'r') as user_file:
+            for row in user_file:
+                for char in row:
+                    if char != ";" and char != "\n":
+                            temp += char
+                    else: #char == ";"
+                        cc += [temp]
+                        temp = ""
+                
+                user += [cc]
+                cc = []
+                
+        user_file.close()
+
+
+        #PARSE UNTUK game.csv
+        game_list = []
+        temp = ""
+        cc = []
+        with open(f'{args.x}/game.csv',"r") as game:
+            for row in game:
+                for char in row:
+                    if char != ";" and char != "\n":
+                        temp += char
+                    else:
+                        cc += [temp]
+                        temp = ""
+                game_list += [cc]
+                cc = []
+        game.close()
+
+        #PARSE UNTUK kepemilikan.csv
+        ownership = []
+        temp = ""
+        cc= []
+        with open(f'{args.x}/kepemilikan.csv',"r") as own:
+            for row in own:
+                for char in row:
+                    if char != ";" and char!="\n":
+                        temp += char
+                    else:
+                        cc += [temp]
+                        temp = ""
+                ownership += [cc]
+                cc = []
+        own.close()
+
+        #PARSE UNTUK riwayat.csv
+        history = []
+        temp = ""
+        cc = []
+        with open (f'{args.x}/riwayat.csv', "r") as history_file:
+            for row in history_file:
+                for char in row:
+                    if char != ";" and char!="\n":
+                        temp += char
+                    else:
+                        cc += [temp]
+                        temp = ""
+                history += [cc]
+                cc = []
+        history_file.close()
         print("Selamat datang di antarmuka “Binomo”") 
     else:
         print(f"Folder “{args.x}” tidak ditemukan.")
-    return(user.readlines(), game.readlines(), ownership.readlines(), history.readlines())
-load()
+    return(user,game,history,ownership)
+
+#load()
