@@ -5,6 +5,7 @@ def tictactoe():
     ans = [["","",""], ["","",""], ["","",""]] #list jawaban
     turn = 1 #putaran ke berapa
     pemain = 1 #yang mulai adalah pemain 1
+    menang = False
     while turn <= 9:
         print(f"Giliran Pemain {pemain}")
         if pemain == 1:
