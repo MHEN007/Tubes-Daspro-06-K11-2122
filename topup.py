@@ -1,23 +1,4 @@
 def topup(user):
-    '''
-    user = []
-    temp = ""
-    cc = []
-    count = 0
-    found = False
-    with open('./database/user.csv', 'r') as user_file:
-        for row in user_file:
-            for char in row:
-                if char != ";" and char != "\n":
-                        temp += char
-                else: #char == ";"
-                    cc += [temp]
-                    temp = ""
-            user += [cc]
-            cc = []
-            count +=1
-    count -=1
-    '''
     found = False
     valid = False
     count = 0

@@ -1,23 +1,5 @@
 import isempty
 def riwayat(username, history):
-    '''
-    #Akses database riwayat.csv
-    history = []
-    temp = ""
-    cc= []
-    count_hist = -1
-    with open("./database/riwayat.csv","r") as history_data:
-        for row in history_data:
-            for char in row:
-                if char != ";" and char!="\n":
-                    temp += char
-                else:
-                    cc += [temp]
-                    temp = ""
-            history += [cc]
-            cc = []
-            count_hist +=1
-    '''
     count_hist = -1
     for row in history:
         count_hist += 1

@@ -1,22 +1,6 @@
 def ubah_stok (game_list) :
     
     a = 0
-    '''
-    game_list = []
-    temp = ""
-    cc = []
-    with open('./database/game.csv', 'r') as game:
-        for row in game:
-            for char in row:
-                if char != ";" and char != "\n":
-                    temp += char
-                else:
-                    cc += [temp]
-                    temp = ""
-            game_list += [cc]
-            cc = []
-    game.close()
-    '''
     
     for row in game_list:
         a += 1
