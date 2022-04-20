@@ -96,7 +96,7 @@ def load():
         return(user,game_list,history,ownership)
     else:
         print(f"Folder “{args.x}” tidak ditemukan.")
-        exit() #exit dari program
+        sys.exit() #exit dari program
     
 
 #load()

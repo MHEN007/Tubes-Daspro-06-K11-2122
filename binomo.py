@@ -18,6 +18,7 @@ import ubahGame
 import register
 import listing
 import buy_game
+import magicshell
 
 #SKEMA LOAD
 user,game_list,history,ownership = load.load()
@@ -96,5 +97,7 @@ while exit_state == False:
             buy_game.buy_game(username, user, ownership, game_list)
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
+    elif menu_pilihan == "kerangajaib":
+        magicshell.kerangajaib()
     else:
         print("Masukkan pilihan yang benar!")
