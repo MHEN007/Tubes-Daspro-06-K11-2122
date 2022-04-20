@@ -36,4 +36,4 @@ def kerangajaib():
         print("Opini yang bagus mahasiswa, sekarang belajar lagi ya")
 
 
-kerangajaib()
+#kerangajaib()
