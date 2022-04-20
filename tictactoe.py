@@ -26,7 +26,7 @@ def tictactoe():
 
         #cek jawaban untuk pemain 1
         for i in range(3): #cek untuk setiap baris
-            if (ans[i][0] == "X" and ans[0][1] == "X" and ans[0][2] == "X"):
+            if (ans[i][0] == "X" and ans[i][1] == "X" and ans[i][2] == "X"):
                 print()
                 print("Pemain 1 menang!")
                 cetak_game(ans)
@@ -48,7 +48,7 @@ def tictactoe():
 
         #cek jawaban untuk pemain 2
         for i in range(3):#cek untuk setiap baris
-            if (ans[i][0] == "O" and ans[0][1] == "O" and ans[0][2] == "O"):
+            if (ans[i][0] == "O" and ans[i][1] == "O" and ans[i][2] == "O"):
                 print()
                 print("Pemain 2 menang!")
                 cetak_game(ans)
