@@ -1,5 +1,5 @@
 def exit():
-    print("Apakah Anda ingin keluar dari aplikasi ini? (Y/N)", end="")
+    print("Apakah Anda ingin keluar dari aplikasi ini? (Y/N) ", end="")
     confirm_exit = input()
     #exit_state = False
     state = False
