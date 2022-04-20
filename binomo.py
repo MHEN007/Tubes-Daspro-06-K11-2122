@@ -19,6 +19,7 @@ import register
 import listing
 import buy_game
 import magicshell
+import tictactoe
 
 #SKEMA LOAD
 user,game_list,history,ownership = load.load()
@@ -99,5 +100,7 @@ while exit_state == False:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "kerangajaib":
         magicshell.kerangajaib()
+    elif menu_pilihan == "tictactoe":
+        tictactoe.tictactoe()
     else:
         print("Masukkan pilihan yang benar!")
