@@ -11,7 +11,7 @@ def help(role): #parameter berupa role dari user yang sedang login
         print("8. help - untuk melihat perintah yang ada")
         print("10. exit - untuk exit dari program")
         print("11. save - untuk menyimpan data sebagai csv file")
-        print("12. Kerang Ajaib - untuk menanyakan sesuatu (seperti magic-8-ball)")
+        print("12. kerangajaib - untuk menanyakan sesuatu (seperti magic-8-ball)")
         print("13. tictactoe - bermain tic-tac-toe")
     else: #role user. masukan pasti benar karena diambil dari data user.csv. menu yang ditampilkan jika rolenya adalah user
         print("1. list_game_toko - Untuk melihat list game yang dijual pada toko")
@@ -23,7 +23,7 @@ def help(role): #parameter berupa role dari user yang sedang login
         print("7. help - untuk melihat perintah yang ada")
         print("8. exit - untuk exit dari program")
         print("9. save - untuk menyimpan data sebagai csv file")
-        print("10. Kerang Ajaib - untuk menanyakan sesuatu (seperti magic-8-ball)")
+        print("10. kerangajaib - untuk menanyakan sesuatu (seperti magic-8-ball)")
         print("11. tictactoe - bermain tic-tac-toe")
 
 #tes
