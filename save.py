@@ -4,10 +4,20 @@ def save(user, game_list, ownership, history):
     state = False #state apakah nama folder sudah ada atau belum ada
     parent_dir = './save/' #folder penyimpanan untuk prosedur save
     folder = input("Masukkan nama folder penyimpanan: ")
+
+    valid_input = False
     
-    while folder == "": #asumsinya tidak boleh kosong untuk nama foldernya
-        print("Input nama folder tidak boleh kosong!")
-        folder = input("Masukkan nama folder penyimpanan: ")
+    while valid_input == False:
+        if folder == "": #handling untuk input nama folder kosong
+            print("Input nama folder tidak boleh kosong!")
+            folder = input("Masukkan nama folder penyimpanan: ")
+            valid_input == False
+        elif "/" in folder or "?" in folder or ":" in folder or "<" in folder or ">" in folder or "|" in folder: #handling untuk karakter terlarang
+            print("Input nama folder tidak boleh mengandung karakter '/' '?' ':' '<' '>' '|'!")
+            folder = input("Masukkan nama folder penyimpanan: ")
+            valid_input == False
+        else:
+            valid_input = True
     
     for (root, files, dirs) in os.walk(f'{parent_dir}'):
         if folder in root: #jika nama folder ada dalam parameter root
