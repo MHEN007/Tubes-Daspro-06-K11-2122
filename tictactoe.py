@@ -28,40 +28,53 @@ def tictactoe():
         #cek jawaban untuk pemain 1
         for i in range(3): #cek untuk setiap baris
             if (ans[i][0] == "X" and ans[0][1] == "X" and ans[0][2] == "X"):
+                print()
                 print("Pemain 1 menang!")
                 cetak_game(ans)
-                sys.exit()
+                turn = 10
+                menang = True
         for i in range(3): #cek untuk setiap kolom
             if (ans[0][i] == "X" and ans[1][i]=="X" and ans[2][i]=="X"):
+                print()
                 print("Pemain 1 menang!")
                 cetak_game(ans)
-                sys.exit()
+                turn = 10
+                menang = True
         if (ans[0][0] == "X" and ans[1][1] == "X" and ans[2][2] == "X") or (ans[2][0] == "X" and ans[1][1] == "X" and ans[0][2] == "X"): #cek untuk menyilang
+            print()
             print("Pemain 1 menang!")
             cetak_game(ans)
-            sys.exit()
+            turn = 10
+            menang = True
 
         #cek jawaban untuk pemain 2
         for i in range(3):#cek untuk setiap baris
             if (ans[i][0] == "O" and ans[0][1] == "O" and ans[0][2] == "O"):
+                print()
                 print("Pemain 2 menang!")
                 cetak_game(ans)
-                sys.exit()
+                turn = 10
+                menang = True
         for i in range(3):#cek untuk setiap kolom
             if (ans[0][i] == "O" and ans[1][i]=="O" and ans[2][i]=="O"):
+                print()
                 print("Pemain 2 menang!")
                 cetak_game(ans)
-                sys.exit()
+                turn = 10
+                menang = True
         if (ans[0][0] == "O" and ans[1][1] == "O" and ans[2][2] == "O") or (ans[2][0] == "O" and ans[1][1] == "O" and ans[0][2] == "O"): #cek untuk menyilang
+            print()
             print("Pemain 2 menang!")
             cetak_game(ans)
-            sys.exit()
+            turn = 10
+            menang = True
         print()
     
-    #Kalau gak ke-exit artinya tidak ada yang menang dan tidak ada yang kalah
-    print("Draw")
-    cetak_game(ans)
-        
+    #cek variabel menang
+    if menang == False:
+        print("Draw")
+        cetak_game(ans)
+            
 
 def cetak_game(ans):
     for row in range (3):
