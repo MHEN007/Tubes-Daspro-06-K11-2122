@@ -1,4 +1,3 @@
-import sys
 def tictactoe():
     #pemain 1 = x
     #pemain 2 = o
