@@ -90,12 +90,16 @@ def input_ans(ans, pemain):
 
     state = False
     while state == False:
-        if ans[row-1][col-1] == "X" or ans[row-1][col-1]=="O":
-            print("Tempat itu sudah diisi")
+        if str(row) == "" or str(col) =="":
+            print("Input baris dan kolom tidak boleh kosong")
             row = int(input("Masukkan baris Anda "))
             col = int(input("Masukkan kolom Anda "))
-        elif row == "" or col == "":
-            print("Silakan isi baris dan kolom")
+        if (row > 3 or row <=0) or (col <=0 or col > 3):
+            print("Input baris dan kolom salah! Baris dan kolom harus dalam rentang 1...3")
+            row = int(input("Masukkan baris Anda "))
+            col = int(input("Masukkan kolom Anda "))
+        elif ans[row-1][col-1] == "X" or ans[row-1][col-1]=="O":
+            print("Tempat itu sudah diisi")
             row = int(input("Masukkan baris Anda "))
             col = int(input("Masukkan kolom Anda "))
         else:

@@ -16,13 +16,7 @@ def ubah_Game(ubahGame):
     kategori = str(input("Masukkan kategori: "))
     tahun_Rilis = str(input("Masukkan tahun rilis: "))
     hargaGame = str(input("Masukkan harga: "))
-    '''
-    ulang = 1
-    for i in [namaGame,kategori,tahun_Rilis,hargaGame]: #kurang ngerti ini maksudnya apa. Kan habis semua input divalidasi lgsg dimasukkin ke arranya.
-        if i != '':
-            ubahGame[list][ulang] = i
-        ulang += 1
-    '''
+    
     #edit nama game
     if namaGame != "":
         ubahGame[list][1] = namaGame
