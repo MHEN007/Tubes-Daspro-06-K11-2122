@@ -8,6 +8,10 @@ def kerangajaib():
     a = 8121
     c = 28411
     x = int(tm.strftime("%S")) #ambil sekuens dari detik waktu saat ini
+
+    if x == 0: #handle ketika x = 0 (syarat LCG, 0<X<m)
+        x += 1
+    
     x = ((a*x) + c) % m #rumus LCG
 
     batas = []
