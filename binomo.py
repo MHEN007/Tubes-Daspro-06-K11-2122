@@ -32,7 +32,6 @@ role, username, user_id = login.login(user) #nanti harus didefinisikan dari logi
 exit_state = False #deklarasi exit state
 loop_state = True
 input_state = False
-save_state = False #state apakah sudah pernah melakukan save atau belum
 #SKEMA MENU
 #Pemilihan menu
 while exit_state == False:
@@ -40,7 +39,7 @@ while exit_state == False:
     if menu_pilihan == "help":
         help.help(role)
     elif menu_pilihan == "exit":
-        exit_state = exit.exit(save_state, user,game_list,history,ownership)
+        exit_state = exit.exit(user,game_list,history,ownership)
     elif menu_pilihan =="tambah_game":
         while loop_state == True:
             nama_game = input("Masukkan nama game: ")

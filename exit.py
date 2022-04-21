@@ -1,37 +1,35 @@
 import save,os,time
 
-def exit(save_state,user,game_list,history,ownership):
-    print("Apakah Anda ingin keluar dari aplikasi ini? (Y/N) ", end="")
-    confirm_exit = input()
-    #exit_state = False
-    state = False
+def exit(user,game_list,history,ownership):
+    print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (Y/N) ", end="")
+    confirm_save = input()
+    state = False #state input benar atau salah
     while state == False:
-        if confirm_exit == "Y" or confirm_exit == "y" or confirm_exit == "N" or confirm_exit == "n":
+        if confirm_save == "Y" or confirm_save == "y" or confirm_save == "N" or confirm_save == "n":
             state = True
-            if confirm_exit == "Y" or confirm_exit == "y":
-                if save_state == False: #kalau belum ada aksi save sebelumnya, lakukan autosave
-                    parent_dir = './save/' #folder penyimpanan untuk prosedur save
-                    folder = time.strftime("%d-%m-%Y") #nama folder default
+            if confirm_save == "Y" or confirm_save == "y":
+                parent_dir = './save/' #folder penyimpanan untuk prosedur save
+                folder = time.strftime("%d-%m-%Y") #nama folder default
 
-                    os.mkdir(f'{parent_dir}/{folder}')
-                    #save user.csv
-                    save.save_file(user, "user", parent_dir, folder)
+                os.mkdir(f'{parent_dir}/{folder}')
+                #save user.csv
+                save.save_file(user, "user", parent_dir, folder)
 
-                    #save game.csv
-                    save.save_file(game_list, "game", parent_dir, folder)
+                #save game.csv
+                save.save_file(game_list, "game", parent_dir, folder)
 
-                    #save kepemilikan.csv
-                    save.save_file(ownership, "kepemilikan", parent_dir, folder)
+                #save kepemilikan.csv
+                save.save_file(ownership, "kepemilikan", parent_dir, folder)
 
-                    #save riwayat.csv
-                    save.save_file(history, "riwayat", parent_dir, folder)
+                #save riwayat.csv
+                save.save_file(history, "riwayat", parent_dir, folder)
                 exit_state = True #klo true berarti keluar
             else:
-                exit_state = False
+                exit_state = True
         else:
             state = False
-            print("Apakah Anda ingin keluar dari aplikasi ini? (Y/N) ", end="")
-            confirm_exit = input()
+            print("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (Y/N) ", end="")
+            confirm_save = input()
     return exit_state
 
 #tes
