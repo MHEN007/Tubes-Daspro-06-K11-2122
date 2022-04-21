@@ -30,8 +30,13 @@ Untuk login, gunakan username dan password Anda (case sensitive).
 Menu adalah navigasi Anda dalam program ini. Ketikkan `help` setelah login untuk melihat menu yang tersedia
 
 ## Exit
-Untuk keluar dari program, ketikkan `exit`. Jika Anda ingin save file Anda, silakan ketikkan menu `save` dan memilih atau membuat folder Anda.
+Untuk keluar dari program, ketikkan `exit`. Menu ini menawarkan sebelum Anda keluar apakah Anda ingin melakukan save file atau tidak. Jika Anda ingin save file, ketikkan `Y` atau `y`. Jika tidak, ketikkan `N` atau `n`. Setelah itu, program akan keluar.
 
-**Perhatian: Tidak ada autosave, kegagalan melakukan save dapat membuat apapun yang Anda lakukan dalam sesi Anda tidak tersimpan**
+Folder ini tersedia di dalam folder `save` dengan format `dd-mm-yyyy`
 
-Folder ini tersedia di dalam folder `save`
+# Bonus
+## Game Tic-Tac-Toe
+Bermain game tic-tac-toe dengan mengetikkan `tictactoe` pada menu
+
+## Magic Conch Shell
+Kerang ajaib yang dapat menjawab pertanyaan Anda. Ketikkan `kerangajaib` dan ajukan pertanyaan Anda.
