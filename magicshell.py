@@ -1,7 +1,7 @@
 import time as tm
 
 def kerangajaib():
-    #question = input("Apa pertanyaanmu? ")
+    question = input("Apa pertanyaanmu? ")
     
     #m, a, c dari konstanta yang digunakan oleh module random
     m = 134456
