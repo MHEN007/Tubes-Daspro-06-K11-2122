@@ -1,16 +1,19 @@
 import time as tm
 
 def kerangajaib():
-    question = input("Apa pertanyaanmu? ")
+    #question = input("Apa pertanyaanmu? ")
     
     #m, a, c dari konstanta yang digunakan oleh module random
     m = 134456
     a = 8121
     c = 28411
-    x = int(tm.strftime("%S")) #ambil sekuens dari detik waktu saat ini
+    y = int(tm.strftime("%S")) #ambil sekuens dari detik waktu saat ini
+    z = int(tm.time()) #cetak waktu saat ini dengan format dari module time
 
-    if x == 0: #handle ketika x = 0 (syarat LCG, 0<X<m)
-        x += 1
+    if y == 0: #handle ketika x = 0 (syarat LCG, 0<X<m)
+        y += 1
+    
+    x = ((y//5)*z) #membuat set X dari operasi antara y dan z
     
     x = ((a*x) + c) % m #rumus LCG
 
