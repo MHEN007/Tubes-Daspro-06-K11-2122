@@ -87,7 +87,7 @@ while exit_state == False:
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "save":
-        save_state = save.save(user, game_list, ownership, history)
+        save.save(user, game_list, ownership, history)
     elif menu_pilihan == "ubah_game":
         ubahGame.ubah_Game(game_list)
     elif menu_pilihan == "register":

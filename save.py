@@ -58,8 +58,7 @@ def save(user, game_list, ownership, history):
 
     #kalau sudah selesai melakukan save
     print("Data telah disimpan pada folder {}".format(folder))
-    save_state = True
-    return(save_state)
+    return
 
 def save_file(data, jenis, parent_dir, folder):
     #prosedur untuk menyimpan data
@@ -84,4 +83,6 @@ def save_file(data, jenis, parent_dir, folder):
                 else:
                     save_file.write(f"{data[i][j]}\n")
     save_file.close()
+
+    return
     
