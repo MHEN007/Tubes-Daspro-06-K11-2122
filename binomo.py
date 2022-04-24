@@ -79,7 +79,10 @@ while exit_state == False:
         else: #role != admin
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "list_game":
-        list_game.list_game(username, ownership, game_list, user)
+        if role == "user":
+            list_game.list_game(username, ownership, game_list, user)
+        else:
+            print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "search_game_at_store":
         search_game_at_store.searchGameAtStore(game_list)
     elif menu_pilihan == "riwayat":
