@@ -13,7 +13,7 @@ def tambah_game(nama,kategori,tahun,harga,stok,game_list):
         id = "GAME00" + str(count_game)
     game_list += [[id,nama, kategori, tahun, harga, stok]] 
     print(f"Selamat! Berhasil menambahkan game BNMO - {nama}.")
-    return (game_list)
+    return
 
 def ulang(a,b,c,d,e):
     if isempty.isempty(a) or isempty.isempty(b) or isempty.isempty(c) or isempty.isempty(d) or isempty.isempty(e):

@@ -8,6 +8,7 @@ import isempty
 def cekfolder(x):
     exist = os.path.exists(x)
     return exist
+    
 def load():
     print("loading...")
     parser = argparse.ArgumentParser(usage = "python program_binomo.py <nama_folder>") 
@@ -37,6 +38,8 @@ def load():
     else:
         print(f"Folder “{args.x}” tidak ditemukan.")
         sys.exit() #exit dari program
+    
+    return
     
 def load_file(args, file_name):
     saveas = []

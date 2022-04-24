@@ -40,4 +40,4 @@ def ubah_Game(ubahGame):
         ubahGame[list][4] = hargaGame
     else:
         ubahGame[list][4] = ubahGame[list][4]
-    return ubahGame
+    return

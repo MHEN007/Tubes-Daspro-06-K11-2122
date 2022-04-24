@@ -89,3 +89,5 @@ def listing (game_list) :
     
     else :
         print("Skema sorting tidak valid!")
+    
+    return

@@ -60,6 +60,8 @@ def searchMyGame(user_id,ownership,game_list):
             
         if count_ada <= 0:
             print("Tidak ada game yang ditemukan")
+    
+    return
 
 #TES
 #searchMyGame("1")

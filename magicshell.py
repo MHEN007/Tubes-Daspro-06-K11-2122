@@ -42,5 +42,6 @@ def kerangajaib():
     else:
         print("Opini yang bagus mahasiswa, sekarang belajar lagi ya")
 
+    return
 
 #kerangajaib()

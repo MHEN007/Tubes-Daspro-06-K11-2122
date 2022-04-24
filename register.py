@@ -23,6 +23,7 @@ def register(user):
     if unique: #jika username unik
         user += [[count_user, username, nama, password, "user", "0"]] #Masukkan ke user dg role user dan saldo awal 0
         print(f"Username {username} telah berhasil register ke dalam “Binomo”.")
-        return(user)
     else:
         print(f"Username {username} sudah terpakai, silakan menggunakan username lain.")
+    
+    return

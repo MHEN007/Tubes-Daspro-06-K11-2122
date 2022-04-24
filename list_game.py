@@ -30,6 +30,8 @@ def list_game(username, ownership, game_list, user):
                     nomor +=1
             validate = False
     if nomor==1:
-        print("Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli.")
+        print("Maaf, kamu belum membeli game. Ketik perintah buy_game untuk beli.")
+    
+    return
 # WII = "WII"
 # list_game(WII)

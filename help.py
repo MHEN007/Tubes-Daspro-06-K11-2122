@@ -26,5 +26,6 @@ def help(role): #parameter berupa role dari user yang sedang login
         print("10. kerangajaib - untuk menanyakan sesuatu (seperti magic-8-ball)")
         print("11. tictactoe - bermain tic-tac-toe")
 
+    return
 #tes
 #help("admin")

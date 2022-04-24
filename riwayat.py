@@ -42,10 +42,12 @@ def riwayat(username, history):
 
     nomor = 1
     if count == 0:
-        print("Maaf, kamu tidak ada riwayat pembelian game. Ketik perintah beli_game untuk membeli.")
+        print("Maaf, kamu tidak ada riwayat pembelian game. Ketik perintah buy_game untuk membeli.")
     else:
         for i in range(0,count):
             print(str(nomor)+". "+game_id[i]+" | " + nama_game[i] + " | " + harga_game[i] + " | " + tahun[i])
             nomor +=1
+    
+    return
 # WII = "WII"
 # riwayat(WII, [['game_id', 'nama', 'harga', 'username', 'tahun'],['GAME001', 'Tomb Raider', '500000', 'WII', '2022'],['GAME002','League of legends','0','WII','2021']])

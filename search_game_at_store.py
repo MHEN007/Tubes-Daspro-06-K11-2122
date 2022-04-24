@@ -90,6 +90,7 @@ def searchGameAtStore(game_list):
     if true <= 0:
         print("Tidak ada data game yang ditemukan")
 
+    return
 #TES
 '''
 game_list = []

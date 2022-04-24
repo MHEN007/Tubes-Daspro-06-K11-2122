@@ -19,12 +19,8 @@ def save(user, game_list, ownership, history):
         else:
             valid_input = True
     
-    for (root, files, dirs) in os.walk(f'{parent_dir}'):
-        if folder in root: #jika nama folder ada dalam parameter root
-            state = True
-            break
-        else: #jika nama folder tidak ada dalam parameter root
-            state = False
+    state = folder_exist(folder, parent_dir)
+    
     print()
     print("Saving ...")
     if state: #jika nama foldernya ada
@@ -85,4 +81,12 @@ def save_file(data, jenis, parent_dir, folder):
     save_file.close()
 
     return
-    
+
+def folder_exist(folder, parent_dir):
+    for (root, files, dirs) in os.walk(f'{parent_dir}'):
+        if folder in root: #jika nama folder ada dalam parameter root
+            state = True
+            break
+        else: #jika nama folder tidak ada dalam parameter root
+            state = False
+    return state
