@@ -1,6 +1,7 @@
 def topup(user):
     found = False
-    valid = False
+    valid_pos = False
+    valid_neg = False
     count = 0
     for row in user:
         count += 1
@@ -15,14 +16,20 @@ def topup(user):
                 saldo_akhir = int(user[i][5])
                 saldo_akhir += saldo
                 user[i][5] = str(saldo_akhir)
-                valid = True
+                if saldo>0 :
+                    valid_pos = True
+                else:
+                    valid_neg = True
                 break
             else:
-                valid = False
-    if found==False and valid == False:
+                valid_neg = False
+                valid_pos = False
+    if found==False and valid_pos == False and valid_neg==False:
         print('Username "'+us+ '" tidak ditemukan.')
-    elif found and valid:
+    elif found and valid_pos:
         print("Top up berhasil. Saldo "+us+ " bertambah menjadi "+str(saldo_akhir))
+    elif found and valid_neg:
+        print("Top up berhasil. Saldo "+us+" berkurang menjadi " + str(saldo_akhir))
     else:
         print("Masukan tidak valid")
-    return
+    return(user)
