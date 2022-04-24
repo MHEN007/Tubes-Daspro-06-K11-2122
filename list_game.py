@@ -19,18 +19,18 @@ def list_game(username, ownership, game_list, user):
 
     #cari berapa banyak game yang dimiliki
     milik = 0
-    for i in range(1,count_game+1):
+    for i in range(1,count_own+1):
         if ownership[i][1] == id:
             milik +=1
 
     #buat list tentang id game yang dimiliki
     owngameid = [0 for i in range(milik)]
     a = 0
-    for i in range(1,count_game+1):
+    for i in range(1,count_own+1):
         if ownership[i][1] == id:
             owngameid[a] = ownership[i][0]
             a += 1
-    
+
     #buat list untuk nama game, kategori, tahun, dan harga
     owngamenama = [0 for i in range(milik)]
     owngamekategori = [0 for i in range(milik)]
@@ -62,7 +62,7 @@ def list_game(username, ownership, game_list, user):
 
     nomor = 1
     if milik == 0 :
-        print("Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli.")
+        print("Maaf, kamu belum membeli game. Ketik perintah buy_game untuk beli.")
     else:
         for i in range(0,milik):
             print(str(nomor)+". "+owngameid[i]+" | "+owngamenama[i]+" | "+owngamekategori[i]+" | "+owngametahun[i]+" | "+owngameharga[i])
