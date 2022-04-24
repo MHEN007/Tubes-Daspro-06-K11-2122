@@ -44,7 +44,7 @@ def buy_game(username, user, ownership, history, game_list) :
             today = datetime.now()
             print("")
             print("Game " + nama_game + " berhasil dibeli!")
-            history += [[id_game, nama_game, harga_game, id, today.year]]
+            history += [[id_game, nama_game, harga_game, username, today.year]]
         elif (saldo >= harga_game) and (stok_game <= 0) :
             print("")
             print("Stok game tersebut sedang habis!")
