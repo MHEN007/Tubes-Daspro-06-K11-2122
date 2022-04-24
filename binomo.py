@@ -97,7 +97,7 @@ while exit_state == False:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "buy_game":
         if role == "user":
-            buy_game.buy_game(username, user, ownership, game_list)
+            buy_game.buy_game(username, user, ownership, history, game_list)
         else:
             print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "kerangajaib":
