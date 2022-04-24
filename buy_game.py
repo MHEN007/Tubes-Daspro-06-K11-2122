@@ -52,7 +52,7 @@ def buy_game(username, user, ownership, history, game_list) :
                     user[i][5] = str(saldo)
             
             #kurangkan stok di game.csv
-            for i in range(row_user):
+            for i in range(row_game):
                 if game_list[i][0] == id_game:
                     game_list[i][5] = str(stok_game)
             
