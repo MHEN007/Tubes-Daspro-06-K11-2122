@@ -1,4 +1,4 @@
-from datetime import datetime
+import time
 
 def buy_game(username, user, ownership, history, game_list) :
     
@@ -18,15 +18,15 @@ def buy_game(username, user, ownership, history, game_list) :
     for i in range(row_user):
         if user[i][1] == username:
             id = user[i][0]
-            saldo = user[i][5]
+            saldo = int(user[i][5])
 
     id_game = input("Masukkan ID Game: ")
     
     # cari id game di game.csv
     for i in range (row_game) :
         if id_game == game_list[i][0] :
-            harga_game = game_list[i][4]
-            stok_game = game_list[i][5]
+            harga_game = int(game_list[i][4])
+            stok_game = int(game_list[i][5])
             nama_game = game_list[i][1]
 
     found = False        
@@ -41,16 +41,16 @@ def buy_game(username, user, ownership, history, game_list) :
         if (saldo >= harga_game) and (stok_game > 0):
             saldo = saldo - harga_game
             stok_game -= 1
-            today = datetime.now()
+            year = time.strftime("%Y")
             print("")
             print("Game " + nama_game + " berhasil dibeli!")
-            history += [[id_game, nama_game, harga_game, id, today.year]]
+            history += [[id_game, nama_game, harga_game, username, year]]
         elif (saldo >= harga_game) and (stok_game <= 0) :
             print("")
             print("Stok game tersebut sedang habis!")
         elif (saldo < harga_game) :
             print("")
             print("Saldo anda tidak cukup untuk membeli game tersebut!")
-
+            
     return
-#buy_game(username, user, ownership, game_list)
+#buy_game(username, user, ownership, history, game_list)
