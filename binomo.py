@@ -1,6 +1,7 @@
 #bagian utama program
 #lakukan import terhadap module yang sudah ada
 import os
+import time
 import load
 import help
 import exit
