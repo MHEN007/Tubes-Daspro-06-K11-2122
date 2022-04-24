@@ -93,7 +93,10 @@ while exit_state == False:
     elif menu_pilihan == "save":
         save.save(user, game_list, ownership, history)
     elif menu_pilihan == "ubah_game":
-        ubahGame.ubah_Game(game_list)
+        if role == "admin":
+            ubahGame.ubah_Game(game_list)
+        else:
+            print("Anda tidak berwenang untuk mengakses menu ini!")
     elif menu_pilihan == "register":
         if role == "admin":
             register.register(user)
