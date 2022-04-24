@@ -1,4 +1,4 @@
-from datetime import datetime
+import time
 
 def buy_game(username, user, ownership, history, game_list) :
     
@@ -41,10 +41,10 @@ def buy_game(username, user, ownership, history, game_list) :
         if (saldo >= harga_game) and (stok_game > 0):
             saldo = saldo - harga_game
             stok_game -= 1
-            today = datetime.now()
+            year = time.strftime("%Y")
             print("")
             print("Game " + nama_game + " berhasil dibeli!")
-            history += [[id_game, nama_game, harga_game, username, today.year]]
+            history += [[id_game, nama_game, harga_game, username, year]]
         elif (saldo >= harga_game) and (stok_game <= 0) :
             print("")
             print("Stok game tersebut sedang habis!")
