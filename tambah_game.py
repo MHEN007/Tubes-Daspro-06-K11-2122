@@ -5,9 +5,9 @@ def tambah_game(nama,kategori,tahun,harga,stok,game_list):
         count_game += 1
     #db_game = open("./database/game.csv","a")
     #jumlah dari game diasumsikan maksimal 999, jadi cari kemungkinan untuk 3 digit tsb
-    if count_game==3:
+    if count_game>=100:
         id = "GAME" + str(count_game)
-    elif count_game==2:
+    elif count_game>=10:
         id = "GAME0" + str(count_game)
     else :
         id = "GAME00" + str(count_game)
