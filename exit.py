@@ -11,9 +11,9 @@ def exit(user,game_list,history,ownership):
                 parent_dir = './save/' #folder penyimpanan untuk prosedur save
                 folder = time.strftime("%d-%m-%Y") #nama folder default
 
-                state = save.folder_exist(folder, parent_dir) #cek apakah folder tersebut sudah ada atau belum
+                state_folder = save.folder_exist(folder, parent_dir) #cek apakah folder tersebut sudah ada atau belum
 
-                if state == False: #kalau folder belum ada
+                if state_folder == False: #kalau folder belum ada
                     os.mkdir(f'{parent_dir}/{folder}')
                 
                 #save user.csv
