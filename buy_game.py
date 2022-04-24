@@ -18,15 +18,15 @@ def buy_game(username, user, ownership, history, game_list) :
     for i in range(row_user):
         if user[i][1] == username:
             id = user[i][0]
-            saldo = user[i][5]
+            saldo = int(user[i][5])
 
     id_game = input("Masukkan ID Game: ")
     
     # cari id game di game.csv
     for i in range (row_game) :
         if id_game == game_list[i][0] :
-            harga_game = game_list[i][4]
-            stok_game = game_list[i][5]
+            harga_game = int(game_list[i][4])
+            stok_game = int(game_list[i][5])
             nama_game = game_list[i][1]
 
     found = False        
@@ -51,6 +51,6 @@ def buy_game(username, user, ownership, history, game_list) :
         elif (saldo < harga_game) :
             print("")
             print("Saldo anda tidak cukup untuk membeli game tersebut!")
-
+            
     return
-#buy_game(username, user, ownership, game_list)
+#buy_game(username, user, ownership, history, game_list)
