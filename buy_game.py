@@ -44,7 +44,18 @@ def buy_game(username, user, ownership, history, game_list) :
             year = time.strftime("%Y")
             print("")
             print("Game " + nama_game + " berhasil dibeli!")
-            history += [[id_game, nama_game, harga_game, username, year]]
+            history += [[str(id_game), str(nama_game), str(harga_game), str(username), str(year)]] #masukkan ke riwayat.csv
+            ownership += [[str(id_game), str(id)]] #masukkan ke kepemilikan.csv
+            #kurangkan saldo user
+            for i in range(row_user):
+                if user[i][0] == id:
+                    user[i][5] = str(saldo)
+            
+            #kurangkan stok di game.csv
+            for i in range(row_user):
+                if game_list[i][0] == id_game:
+                    game_list[i][5] = str(stok_game)
+            
         elif (saldo >= harga_game) and (stok_game <= 0) :
             print("")
             print("Stok game tersebut sedang habis!")
